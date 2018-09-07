@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.root {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app-container {
+  height: 10rem;
+  width: 27.5rem;
+  max-width: 100%;
+  margin: 1rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  overflow: visible;
+  cursor: pointer;
+}
+
+.app,
+.text {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.7);
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.text {
+  z-index: 3;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app:before,
+.app:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.app:before {
+  z-index: 1;
+}
+
+.app:after {
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: right center;
+  opacity: 0.4;
+}
+
+.angular-app::after {
+  background-image: url("./angular-logo.png");
+  background-size: 35%;
+}
+
+.angular-app::before {
+  background-color: #5e0c0c;
+}
+
+.vue-app::after {
+  background-image: url("./vue-logo.png");
+  background-size: 60%;
+  opacity: 0.5;
+  background-position-y: center;
+  background-position-x: 130%;
+}
+
+.vue-app::before {
+  background-color: #043310;
+}
+
+.react-app::after {
+  background-image: url("./react-logo.png");
+  background-size: 65%;
+  opacity: 0.3;
+  background-position-y: center;
+  background-position-x: 145%;
+}
+
+.react-app::before {
+  background-color: #044659;
+}
+
+.counter {
+  z-index: 3;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  padding: 1rem 2rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.counter-value {
+  font-size: 3rem;
+  font-weight: bold;
+}
